@@ -4,7 +4,7 @@ this file is to test the use of reading XML files
 """
 from lxml import etree
 import os
-
+from xml_tools import read_xml,parse_xml_to_dict
 
 # 将XML文件解析成字典
 def parse_xml_to_dict(xml):
@@ -57,4 +57,10 @@ def xml_from_file(xml_name):
 
 
 if __name__ == "__main__":
-    xml_from_file("2007_000032.xml")
+    # xml_from_file("2007_000032.xml")
+    anno_path = "/home/wushaojin/data/VOCdevkit/VOC2012/Annotations"
+    xml_name="2007_000032.xml"
+    xml_path = os.path.join(anno_path,xml_name)
+    root = read_xml(xml_path)
+    data = parse_xml_to_dict(root)
+    print(data)
