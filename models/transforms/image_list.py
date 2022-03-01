@@ -3,7 +3,7 @@ from torch import Tensor
 
 
 class ImageList(object):
-
+    # 保存图像和resize后的图像尺寸
     def __init__(self, tensors, image_sizes):
         # type: (Tensor, List[Tuple[int,int]]) -> None
         self.tensors = tensors
